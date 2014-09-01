@@ -1,0 +1,30 @@
+<div class="row"><div class="col-md-12">
+    <h2>Declaración del formulario</h2>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <p>
+            Agregando validaciones a los campos.
+        </p>
+        <p>
+            Los campos tienen las mismas propiedades que los formularios: $dirty, $pristine, $valid, $invalid. 
+        </p>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.casareinante.$invalid &amp;&amp; westeros.casareinante.$dirty,
+            'has-success': westeros.casareinante.$valid &amp;&amp; westeros.casareinante.$dirty,
+        }">
+            <label 
+                for="casareinante" 
+                class="col-sm-3 control-label">
+                Casa reinante (obligatorio):
+            </label>
+            <div class="col-sm-9">
+              <input 
+                class="form-control" 
+                id="casareinante" 
+                name="casareinante" 
+                ng-model="modelo.reinante" 
+                placeholder="¿Quién reina en Westeros?"
+                required>
+            </div>
+        </div>
+    </form>
+</div></div>
