@@ -1,0 +1,126 @@
+<div class="row"><div class="col-md-12">
+    <h2>Formularios anidados y aislados</h2>
+    <p class="text-danger">
+    	Esta funcionalidad TODAVÍA no está disponible de forma nativa en AngularJS, 
+    	pero no tardará en llegar.</p>
+    <p>Mientras tanto, nos apoyamos en una directiva para aislar el formulario anidado.</p>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <p>
+            Formulario declarado con la etiqueta 
+            <code>form</code> y con el nombre <code>westeros</code>
+            y con un .
+        </p>
+        <div class="form-group">
+            <label 
+                for="casareinante" 
+                class="col-sm-3 control-label">
+                Casa reinante:
+            </label>
+            <div class="col-sm-9">
+              <input 
+                class="form-control" 
+                id="casareinante" 
+                ng-model="modelo.reinante" 
+                placeholder="¿Quién reina en Westeros?"
+                required>
+            </div>
+        </div>
+        <div class="row"><div class="col-md-11 col-md-offset-1">
+        <h3>Anidando y AISLANDO otro formulario para las Islas de Hierro</h3>
+        <p>
+            Formulario anidado declarado con la atributo 
+            <code>ng-form</code> y con el nombre <code>islashierro</code>
+            y con la directiva isolatedForm.
+        </p>
+        <div class="form-group" ng-form="islashierro" isolate-form>
+            <label 
+                for="casareinanteislashierro" 
+                class="col-sm-3 control-label">
+                Casa reinante: 
+            </label>
+            <div class="col-sm-9">
+                <input 
+                    class="form-control" 
+                    id="campo2" 
+                    ng-model="modelo.islashierro.reinante"
+                    placeholder="¿Quien rige el destino de las Islas de Hierro?"
+                    required>
+            </div>
+        </div>
+        </div>
+    </form>
+</div></div>
+
+
+<div class="row"><div class="col-md-12">
+    <h3>Estados del formulario "westeros":</h3>
+    <table class="table table-bordered">
+        <tr ng-class="{
+            'success':westeros.$valid,
+            'danger':!westeros.$valid
+        }">
+            <td>westeros.$valid</td>
+            <td>ng-valid</td>
+            <td>{{westeros.$valid}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':westeros.$invalid,
+            'danger':!westeros.$invalid
+        }">
+            <td>westeros.$invalid</td>
+            <td>ng-invalid</td>
+            <td>{{westeros.$invalid}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':westeros.$pristine,
+            'danger':!westeros.$pristine
+        }">
+            <td>westeros.$pristine</td>
+            <td>ng-pristine</td>
+            <td>{{westeros.$pristine}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':westeros.$dirty,
+            'danger':!westeros.$dirty
+        }">
+            <td>westeros.$dirty</td>
+            <td>ng-dirty</td>
+            <td>{{westeros.$dirty}}</td>
+        </tr>
+    </table>
+    <h3>Estados del formulario "islashierro":</h3>
+    <table class="table table-bordered">
+        <tr ng-class="{
+            'success':islashierro.$valid,
+            'danger':!islashierro.$valid
+        }">
+            <td>islashierro.$valid</td>
+            <td>ng-valid</td>
+            <td>{{islashierro.$valid}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':islashierro.$invalid,
+            'danger':!islashierro.$invalid
+        }">
+            <td>islashierro.$invalid</td>
+            <td>ng-invalid</td>
+            <td>{{islashierro.$invalid}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':islashierro.$pristine,
+            'danger':!islashierro.$pristine
+        }">
+            <td>islashierro.$pristine</td>
+            <td>ng-pristine</td>
+            <td>{{islashierro.$pristine}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':islashierro.$dirty,
+            'danger':!islashierro.$dirty
+        }">
+            <td>islashierro.$dirty</td>
+            <td>ng-dirty</td>
+            <td>{{islashierro.$dirty}}</td>
+        </tr>
+    </table>
+</div></div>
