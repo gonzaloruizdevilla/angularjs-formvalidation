@@ -1,0 +1,184 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>Tipos de <code>input</code></h2>
+    <p>Los tipos de input básicos y sus validaciones.</p>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <p>
+            Cada campo deja los errores informados en $error.
+        </p>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.hodor.$invalid &amp;&amp; westeros.hodor.$dirty,
+            'has-success': westeros.hodor.$valid &amp;&amp; westeros.hodor.$dirty,
+        }">
+            <label 
+                for="hodor" 
+                class="col-sm-6 control-label">
+                Escribe una frase larga de Hodor: (type text)
+            </label>
+            <div class="col-sm-6">
+              <input 
+                class="form-control" 
+                id="hodor"
+                name="hodor"
+                ng-model="modelo.hodor" 
+                placeholder="¿Hodor?"
+                ng-minlength="6"
+                ng-maxlength="20"
+                ng-pattern="/^(hodor\s*)*$/"
+                required>
+            </div>
+        </div>
+        <div ng-show="westeros.hodor.$dirty">
+            <p class="text-danger" 
+                ng-show="westeros.hodor.$error.required">Vamos, anímate a introducir un valor. (westeros.hodor.$error.required)</p>
+            <p class="text-danger" 
+                ng-show="westeros.hodor.$error.minlength">Algo más largo. (westeros.hodor.$error.minlength)</p>
+            <p class="text-danger" 
+                ng-show="westeros.hodor.$error.maxlength">Hodor no es tan expresivo. (westeros.hodor.$error.maxlength)</p>
+            <p class="text-danger" 
+                ng-show="westeros.hodor.$error.pattern">Hodor no se expresa así. (westeros.hodor.$error.pattern)</p>
+            <p class="text-success" 
+                ng-show="westeros.hodor.$valid">Eso vale. (westeros.hodor.$valid)</p>
+        </div>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.email.$invalid &amp;&amp; westeros.email.$dirty,
+            'has-success': westeros.email.$valid &amp;&amp; westeros.email.$dirty,
+        }">
+            <label 
+                for="email" 
+                class="col-sm-6 control-label">
+                Escribe el email de Tyrion: (type email)
+            </label>
+            <div class="col-sm-6">
+              <input 
+                type="email"
+                class="form-control" 
+                id="email"
+                name="email"
+                ng-model="modelo.email" 
+                placeholder="... @lannister.house"
+                ng-pattern="/@lannister.house/"
+                required>
+            </div>
+        </div>
+        <div ng-show="westeros.email.$dirty">
+            <p class="text-danger" 
+                ng-show="westeros.email.$error.required">Vamos, anímate a introducir un valor.</p>
+            <p class="text-danger" 
+                ng-show="westeros.email.$error.email">Introduce un email válido..</p>
+            <p class="text-danger" 
+                ng-show="westeros.email.$error.pattern">El email tiene que ser de la casa Lannister.</p>
+            <p class="text-success" 
+                ng-show="westeros.email.$valid">Eso vale.</p>
+        </div>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.vasallaje.$invalid &amp;&amp; westeros.vasallaje.$dirty,
+            'has-success': westeros.vasallaje.$valid &amp;&amp; westeros.vasallaje.$dirty,
+        }">
+            <label 
+                for="vasallaje" 
+                class="col-sm-6 control-label">
+                Acepta el vasallaje a los Lanister: (type checkbox)
+            </label>
+            <div class="col-sm-6">
+              <input 
+                type="checkbox"
+                id="vasallaje"
+                name="vasallaje"
+                ng-model="vasallaje"
+                required>
+            </div>
+        </div>
+        <div ng-show="westeros.$dirty">
+            <p class="text-danger" 
+                ng-show="westeros.vasallaje.$error.required">Esto hay que aceptarlo...</p>
+            <p class="text-success" 
+                ng-show="westeros.vasallaje.$valid">Eso es...</p>
+        </div>
+
+        <p class="col-sm-8">Selecciona tu fortaleza favorita:</p>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.fortaleza.$invalid &amp;&amp; westeros.fortaleza.$dirty,
+            'has-success': westeros.fortaleza.$valid &amp;&amp; westeros.fortaleza.$dirty,
+        }">
+            <label 
+                for="fortalezaroja" 
+                class="col-sm-8 control-label">
+                Fortaleza Roja: (type radio)
+            </label>
+            <div class="col-sm-4">
+              <input 
+                type="radio"
+                id="fortalezaroja"
+                name="fortaleza"
+                ng-model="fortaleza"
+                value="fortalezaroja"
+                required>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.fortaleza.$invalid &amp;&amp; westeros.fortaleza.$dirty,
+            'has-success': westeros.fortaleza.$valid &amp;&amp; westeros.fortaleza.$dirty,
+        }">
+            <label 
+                for="bastiontormentas" 
+                class="col-sm-8 control-label">
+                Bastión de tormentas: (type radio)
+            </label>
+            <div class="col-sm-4">
+              <input
+                type="radio"
+                id="bastiontormentas"
+                name="fortaleza"
+                ng-model="bastiontormentas"
+                value="rocadragon" 
+                required>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.fortaleza.$invalid &amp;&amp; westeros.fortaleza.$dirty,
+            'has-success': westeros.fortaleza.$valid &amp;&amp; westeros.fortaleza.$dirty,
+        }">
+            <label 
+                for="nidoaguilas" 
+                class="col-sm-8 control-label">
+                Nido de Águilas: (type radio)
+            </label>
+            <div class="col-sm-4">
+              <input 
+                type="radio"
+                id="nidoaguilas"
+                name="fortaleza"
+                ng-model="fortaleza"
+                value="nidoaguilas" 
+                required>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.fortaleza.$invalid &amp;&amp; westeros.fortaleza.$dirty,
+            'has-success': westeros.fortaleza.$valid &amp;&amp; westeros.fortaleza.$dirty,
+        }">
+            <label 
+                for="rocadragon" 
+                class="col-sm-8 control-label">
+                Roca Dragón: (type radio)
+            </label>
+            <div class="col-sm-4">
+              <input 
+                type="radio"
+                id="rocadragon"
+                name="fortaleza"
+                ng-model="fortaleza"
+                value="rocadragon" 
+                required>
+            </div>
+        </div>
+        <div>
+            <p class="text-danger" 
+                ng-show="westeros.fortaleza.$error.required">Selecciona una fortaleza...</p>
+            <p class="text-success" 
+                ng-show="westeros.fortaleza.$valid">Eso es...</p>
+        </div>
+
+    </form>
+</div></div>
