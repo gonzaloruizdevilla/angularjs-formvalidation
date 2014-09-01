@@ -1,0 +1,27 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>novalidate</h2>
+    <form name="westeros" class="ej1" class="form-horizontal">
+        <p>
+            Formulario sin el atributo <code>novalidate</code>, 
+            que mezcla sistemas de validación, el nativo del navegador y el propio de AngularJS.
+        </p>
+        <div class="form-group" ng-class="{
+        	'has-error': westeros.$invalid &amp;&amp; westeros.$dirty
+        }">
+            <label 
+                for="casareinante" 
+                class="col-sm-3 control-label">
+                Casa reinante:
+            </label>
+            <div class="col-sm-9">
+              <input 
+                class="form-control" 
+                id="casareinante" 
+                ng-model="modelo.reinante" 
+                placeholder="Foco aquí y presiona ENTER con el campo vacío"
+                required>
+            </div>
+        </div>
+    </form>
+</div></div>
