@@ -1,0 +1,39 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>$error</h2>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <p>
+            Cada campo deja los errores informados en $error.
+        </p>
+        <div class="form-group" ng-class="{
+            'has-error': westeros.hermanosjonsnow.$invalid &amp;&amp; westeros.hermanosjonsnow.$dirty,
+            'has-success': westeros.hermanosjonsnow.$valid &amp;&amp; westeros.hermanosjonsnow.$dirty,
+        }">
+            <label 
+                for="hermanosjonsnow" 
+                class="col-sm-6 control-label">
+                Cuantos medio-hermanos tiene Jon Snow:
+            </label>
+            <div class="col-sm-6">
+              <input 
+                class="form-control" 
+                id="hermanosjonsnow"
+                name="hermanosjonsnow"
+                ng-model="modelo.hermanosjonsnow" 
+                placeholder="¿Te sabes todas las teorías?"
+                ng-pattern="/^[25]$/"
+                required>
+            </div>
+        </div>
+        <div ng-show="westeros.hermanosjonsnow.$dirty">
+        	<p class="text-danger" 
+        		ng-show="westeros.hermanosjonsnow.$error.required">Vamos, anímate a introducir un valor.</p>
+        	<p class="text-danger" 
+        		ng-show="westeros.hermanosjonsnow.$error.min">Igual es alguno más.</p>
+        	<p class="text-danger" 
+        		ng-show="westeros.hermanosjonsnow.$error.pattern">Tiene pinta de que tienes que probar otro valor.</p>
+        	<p class="text-success" 
+        		ng-show="westeros.hermanosjonsnow.$valid">Igual es un valor válido...</p>
+        </div>
+    </form>
+</div></div>
