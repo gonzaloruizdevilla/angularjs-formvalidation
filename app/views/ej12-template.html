@@ -1,0 +1,41 @@
+<h2>Por que los maestres de la Ciudadela deben de saber matemáticas</h2>
+<p>Para aprender más de directivas: 
+    <a 
+        href="http://slides.com/gruizdevilla/directivas-angularjs"
+        target="_blank"
+    >http://slides.com/gruizdevilla/directivas-angularjs</a></p>
+<div ng-form name="form">
+    <h3>Ecuación de primer grado</h3>
+    <p ng-repeat="ecuacion in ecuaciones">{{ecuacion}}</p>
+    <p class="alert alert-danger"
+        ng-show="form.solucion.$error.notallowed">
+        Si no permites el uso del micro, no te podré escuchar.</p>
+    <p class="alert alert-danger"
+        ng-show="form.solucion.$error.network">
+        Necesito poder acceder a internet, sorry.</p>
+    <p class="alert alert-danger"
+        ng-show="form.solucion.$error.nospeech">
+        No seas tímid@, dí la solución, que te estoy escuchando.</p>
+    <p class="alert alert-danger"
+        ng-show="form.solucion.$error.network">
+        Necesito poder acceder a internet, sorry.</p>
+    <p class="alert alert-danger"
+        ng-show="form.solucion.$error.valores">
+        Los valores no son solución de la ecuación.</p>
+    <p class="alert alert-danger"
+        ng-show="form.solucion.$error.expresion">
+        No se te entendió.
+        La forma de decir la solución es: "x [número] y [número]"</p>
+    <p class="alert alert-success"
+        ng-show="form.$valid">¡Ecuación
+            resuelta con valores
+            <strong>(x: {{solucion.x}},
+            y: {{solucion.y}})</strong>!</p>
+
+    <input ng-model="solucion"
+        required
+        name="solucion"
+        primergrado="ecuaciones" />
+
+    <p><small>Nota: el ejemplo funciona (al menos) con Chrome 33 o superior.</small></p>
+</div>
