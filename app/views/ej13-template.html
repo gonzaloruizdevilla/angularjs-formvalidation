@@ -1,0 +1,28 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>$pending</h2>
+    <p>Los cuervos tardan en llevar sus mensajes.</p>
+    <form name="westeros" novalidate  class="form-horizontal">
+        <p> Soy el vigilante del Muro. Soy el fuego que arde contra el frío, la luz que trae el amanecer, el cuerno que despierta a los durmientes, el escudo que defiende los reinos de los hombres.</p>
+        <div class="form-group row">
+            <label 
+                for="refuerzos" 
+                class="col-sm-6 control-label">
+                Desde el Muro, pide refuerzos a Desembarco del Rey: 
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="refuerzos"
+                name="refuerzos"
+                required
+                refuerzos
+                ng-model="modelo.refuerzos"
+                placeholder="a ver si te hacen caso...">
+                <p class="text-warning" ng-show="westeros.refuerzos.$pending.noHayDelincuentes">Los cuervos están en camino</p>
+            </div>
+        </div>
+        <p class="text-success" ng-show="westeros.refuerzos.$valid">Podemos tener {{modelo.refuerzos}} hermanos más.</p>
+        <p class="text-danger" ng-show="westeros.refuerzos.$error.noHayDelincuentes">No hay tantos delincuentes en las mazmorras para enviar a vestir el negro.</p>
+    </form>
+</div></div>
