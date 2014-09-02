@@ -15,8 +15,7 @@ var menu = [
   'ngModelOptions 2',
   'validaciones propias',
   '$pending',
-  'informes',
-  'informes2'
+  'informes'
 ];
 
 angular.module('validacionesApp', [

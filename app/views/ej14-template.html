@@ -1,0 +1,70 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>informes</h2>
+    <h3>Aprendiendo Dothraky</h3>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <div ng-show="reporte">
+            <p><strong>Corrige los siguientes errores</strong>. Te damos una pista con la traducción literal</p>
+            <ul>
+                <li ng-show="reporte.armadura" ng-class="{
+                    'text-danger': reporte.armadura.$invalid,
+                    'text-success': reporte.armadura.$valid
+                }">shor tawakof (vestido de hierro)</li>
+                <li ng-show="reporte.barco" ng-class="{
+                    'text-danger': reporte.barco.$invalid,
+                    'text-success': reporte.barco.$valid
+                }">rhaggat eveth (carro del agua)</li>
+                <li ng-show="reporte.cometa" ng-class="{
+                    'text-danger': reporte.cometa.$invalid,
+                    'text-success': reporte.cometa.$valid
+                }">shierak qiya (estrella sangrienta)</li>
+                <li ng-show="reporte.hola" ng-class="{
+                    'text-danger': reporte.hola.$invalid,
+                    'text-success': reporte.hola.$valid
+                }">M'ath! (saludo corto)</li>
+            </ul>
+        </div>
+        <p>Arya va actualizando su lista periódicamente y borra a los que ya están muertos...</p>
+        <div class="form-group row">
+            <label 
+                for="armadura" 
+                class="col-sm-6 control-label">
+                shor tawakof
+            </label>
+            <div class="col-sm-6 controls">
+              <input class="form-control" id="armadura" name="armadura" required ng-model="armadura" ng-pattern="/^armadura$/">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="barco" 
+                class="col-sm-6 control-label">
+                rhaggat eveth
+            </label>
+            <div class="col-sm-6 controls">
+              <input class="form-control" id="barco" re name="barco" required ng-model="barco" ng-pattern="/^barco$/">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="cometa" 
+                class="col-sm-6 control-label">
+                shierak qiya
+            </label>
+            <div class="col-sm-6 controls">
+              <input class="form-control" id="cometa" r name="cometa" required ng-model="cometa" ng-pattern="/^cometa$/">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="hola" 
+                class="col-sm-6 control-label">
+                M'ath!
+            </label>
+            <div class="col-sm-6 controls">
+              <input class="form-control" id="hola" req name="hola" required ng-model="hola" ng-pattern="/^hola$/">
+            </div>
+        </div>
+        <button validate-form="westeros" on-valid="reporte = null; ok=true" on-invalid="reporte = currentErrors">Validar</button>
+    </form>
+</div></div>
