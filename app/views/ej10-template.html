@@ -1,0 +1,24 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>ngModelOptions</h2>
+    <p>Trucos del almendruco al sur del muro.</p>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <p>Cuando se juega al juego de tronos sólo se puede ganar o morir. No hay puntos intermedios. (Cersei Lannister)</p>
+        <div class="form-group row">
+            <label 
+                for="cersei" 
+                class="col-sm-6 control-label">
+                Escribe algo digno de Cersei: (updateOn: 'blur')
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="cersei"
+                ng-model="modelo.cersei"
+                ng-model-options="{updateOn:'blur'}"
+                placeholder="pero que mala es Cersei...">
+            </div>
+        </div>
+        <p>Cersei ha dicho: “{{modelo.cersei}}”</p>
+    </form>
+</div></div>
