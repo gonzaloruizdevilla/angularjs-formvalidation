@@ -1,0 +1,27 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>ngModelOptions</h2>
+    <p>La venganza de Arya.</p>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <p>Arya va actualizando su lista periódicamente y borra a los que ya están muertos...</p>
+        <div class="form-group row">
+            <label 
+                for="lista" 
+                class="col-sm-6 control-label">
+                La lista de Arya: (debounce: 1000, getterSetter: true)
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="lista"
+                ng-model="lista"
+                ng-model-options="{
+                    debounce: 1000, 
+                    getterSetter: true
+                }"
+                placeholder="hay que darle uso a Aguja">
+            </div>
+        </div>
+        <p>La lista actualizada: {{lista()}}</p>
+    </form>
+</div></div>
