@@ -1,0 +1,129 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>ng-messages</h2>
+    <h3>Un Lannister siempre paga sus deudas.</h3>
+    <p>A veces, eso implica mucho oro...</p>
+    <form name="westeros" novalidate class="ej1" class="form-horizontal">
+        <h4>Informe de tesorería</h4>
+        <div ng-messages="westeros.rocacasterly.$error" class="text-danger">
+            <p>Algo pasa en Roca Casterly:
+                <span ng-message="required">Informa inmediatemente.</span>
+                <span ng-message="min">Tywin Lannister se va a enfada si hay tan poco.</span>
+            </p>
+        </div>
+        <div ng-messages="westeros.desembarco.$error" class="text-danger">
+            <p>Algo pasa en Desembarco del Rey:
+                <span ng-message="required">Informa inmediatemente.</span>
+                <span ng-message="min">¿Demasiadas fiestas de Rober Baratheon dejaron Desembarco sin fondos??</span>
+            </p>
+        </div>
+        <div ng-messages="westeros.desembarco.$error" class="text-danger">
+            <p>Algo pasa en Harrenhal:
+                <span ng-message="required">Informa inmediatemente.</span>
+                <span ng-message="max">Harrenhal suele cambiar mucho de manos. No debe tener tantos dragones.</span>
+            </p>
+        </div>
+        <script type="text/ng-template" id="error-messages">
+          <span ng-message="required">Informa inmediatemente</span>
+          <span ng-message="min">Un vasallo Lannister no puede ser pobre.</span>
+          <span ng-message="max">Hay que subirle la recaudación.</span>
+        </script>
+
+        <div ng-show="westeros.fuertedesolacion.$error" class="text-danger" >
+            Problemas con fuerte desolación:
+            <span ng-messages="westeros.fuertedesolacion.$error" ng-messages-include="error-messages"></span>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="rocacasterly" 
+                class="col-sm-6 control-label">
+                Fondos disponibles en Roca Casterly:
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="rocacasterly"
+                name="rocacasterly"
+                ng-model="modelo.rocacasterly"
+                type="number"
+                min="100000"
+                required
+                placeholder="en dragones de oro...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="desembarco" 
+                class="col-sm-6 control-label">
+                Fondos disponibles en Desembarco del Rey:
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="desembarco"
+                name="desembarco"
+                ng-model="modelo.desembarco"
+                type="number"
+                min="1000"
+                required
+                placeholder="en dragones de oro...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="harrenhal" 
+                class="col-sm-6 control-label">
+                Fondos disponibles en Harrenhal:
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="harrenhal"
+                name="harrenhal"
+                ng-model="modelo.harrenhal"
+                type="number"
+                max="1000"
+                required
+                placeholder="en dragones de oro...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="fuertedesolacion" 
+                class="col-sm-6 control-label">
+                Fondos disponibles en Fuerte Desolación:
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="fuertedesolacion"
+                name="fuertedesolacion"
+                ng-model="modelo.fuertedesolacion"
+                type="number"
+                max="100"
+                max="10000"
+                required
+                placeholder="en dragones de oro...">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label 
+                for="refugioquebrado" 
+                class="col-sm-6 control-label">
+                Fondos disponibles en Refugio Quebrado:
+            </label>
+            <div class="col-sm-6 controls">
+              <input 
+                class="form-control" 
+                id="refugioquebrado"
+                name="refugioquebrado"
+                ng-model="modelo.refugioquebrado"
+                type="number"
+                max="100"
+                max="10000"
+                required
+                placeholder="en dragones de oro...">
+            </div>
+        </div>
+    </form>
+</div></div>
