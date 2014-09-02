@@ -10,10 +10,11 @@ var menu = [
   'input',
   '$error',
   'type',
-  '¿cuando validar?',
+  'ngmessage',
+  'ngModelOptions',
+  'ngModelOptions 2',
   'validaciones propias',
   '$pending',
-  'ngmessage',
   'informes',
   'informes2'
 ];
@@ -23,6 +24,7 @@ angular.module('validacionesApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngMessages',
   'hljs',
   'isolateForm'
 ])
