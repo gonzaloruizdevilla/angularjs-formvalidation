@@ -12,22 +12,19 @@ angular.module('validacionesApp')
       },
       link: function link(scope, element) {
         function checkForm(){
-          var errors = {}, hayErrores = false;
+          if (scope.validateForm.$valid) {
+            scope.onValid();
+            return;
+          }
+          var errors = {};
           for(var key in scope.validateForm){
             if (key.indexOf('$') !== 0) {
               if (scope.validateForm[key].$invalid) {
-                hayErrores = true;
                 errors[key] = scope.validateForm[key];
               }
             }
           }
-          console.log(errors);
-          if (hayErrores){
-            scope.onInvalid({currentErrors: errors});
-          } else {
-            scope.onValid();
-          }
-
+          scope.onInvalid({currentErrors:errors});
         }
         angular.element(element).on('click',checkForm);
         scope.$on('destroy', function (){
