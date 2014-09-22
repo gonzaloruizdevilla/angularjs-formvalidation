@@ -29,10 +29,30 @@
         <h3>Anidando y AISLANDO otro formulario para las Islas de Hierro</h3>
         <p>
             Formulario anidado declarado con la atributo 
-            <code>ng-form</code> y con el nombre <code>islashierro</code>
-            y con la directiva isolatedForm.
+            <code>ng-form</code> y con el nombre <code>islashierro</code>.
         </p>
-        <div class="form-group" ng-form="islashierro" isolate-form>
+        <div class="form-group" ng-form="islashierro">
+            <label 
+                for="casareinanteislashierro" 
+                class="col-sm-3 control-label">
+                Casa gobernante: 
+            </label>
+            <div class="col-sm-9">
+                <input 
+                    class="form-control" 
+                    id="campo2" 
+                    ng-model="modelo.islashierro.gobernante"
+                    ng-disabled="modelo.islashierro.reinante"
+                    placeholder="¿Quien rige el destino de las Islas de Hierro?"
+                    ng-required="modelo.islashierro.reinante || !modelo.islashierro.gobernante">
+            </div>
+        </div>
+        <p>
+            Formulario anidado declarado con la atributo 
+            <code>ng-form</code> y con el nombre <code>reinoislashierro</code>
+            y <b>aislado</b> con la directiva isolatedForm.
+        </p>
+        <div class="form-group" ng-form="reinoislashierro" isolate-form>
             <label 
                 for="casareinanteislashierro" 
                 class="col-sm-3 control-label">
@@ -43,8 +63,9 @@
                     class="form-control" 
                     id="campo2" 
                     ng-model="modelo.islashierro.reinante"
+                    ng-disabled="modelo.islashierro.gobernante"
                     placeholder="¿Quien rige el destino de las Islas de Hierro?"
-                    required>
+                    ng-required="modelo.islashierro.gobernante || !modelo.islashierro.reinante">
             </div>
         </div>
         </div>
@@ -88,6 +109,7 @@
             <td>{{westeros.$dirty}}</td>
         </tr>
     </table>
+
     <h3>Estados del formulario "islashierro":</h3>
     <table class="table table-bordered">
         <tr ng-class="{
@@ -123,4 +145,41 @@
             <td>{{islashierro.$dirty}}</td>
         </tr>
     </table>
+
+    <h3>Estados del formulario "reinoislashierro":</h3>
+    <table class="table table-bordered">
+        <tr ng-class="{
+            'success':reinoislashierro.$valid,
+            'danger':!reinoislashierro.$valid
+        }">
+            <td>reinoislashierro.$valid</td>
+            <td>ng-valid</td>
+            <td>{{reinoislashierro.$valid}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':reinoislashierro.$invalid,
+            'danger':!reinoislashierro.$invalid
+        }">
+            <td>reinoislashierro.$invalid</td>
+            <td>ng-invalid</td>
+            <td>{{reinoislashierro.$invalid}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':reinoislashierro.$pristine,
+            'danger':!reinoislashierro.$pristine
+        }">
+            <td>reinoislashierro.$pristine</td>
+            <td>ng-pristine</td>
+            <td>{{reinoislashierro.$pristine}}</td>
+        </tr>
+        <tr ng-class="{
+            'success':reinoislashierro.$dirty,
+            'danger':!reinoislashierro.$dirty
+        }">
+            <td>reinoislashierro.$dirty</td>
+            <td>ng-dirty</td>
+            <td>{{reinoislashierro.$dirty}}</td>
+        </tr>
+    </table>
+
 </div></div>
