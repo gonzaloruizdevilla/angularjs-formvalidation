@@ -1,0 +1,30 @@
+
+<div class="row"><div class="col-md-12">
+    <h2>$validators</h2>
+    <p>Simplificando las cosas cuando las cosas son sencillas.</p>
+    <p>Los cuervos tardan en llevar sus mensajes.</p>
+    <form name="westeros" novalidate  class="form-horizontal">
+        <p>Tu Septón te recomienda rezar a uno de los Siete para que te de sabiduría.</p>
+        <div class="form-group row">
+            <label 
+                for="diosoracion" 
+                class="col-sm-6 control-label">
+                ¿A cual de los Siete dedicarás tu oración?: 
+            </label>
+            <div class="col-sm-6 controls">
+              <textarea 
+                class="form-control" 
+                id="diosoracion"
+                name="diosoracion"
+                required
+                dioses
+                ng-model="modelo.diosoracion"
+                placeholder="el Padre, el Guerrero, el Herrero, la Madre, la Doncella, la Vieja o el Desconocido">
+
+                </textarea
+            </div>
+        </div>
+        <p class="text-success" ng-show="westeros.diosoracion.$valid">Los Siete nos pillen confesados...</p>
+        <p class="text-danger" ng-show="westeros.diosoracion.$dirty && westeros.diosoracion.$error.dioses">Ese no es uno de los Siete.</p>
+    </form>
+</div></div>
