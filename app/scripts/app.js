@@ -14,6 +14,7 @@ var menu = [
   'ngModelOptions',
   'ngModelOptions 2',
   'validaciones propias',
+  '$validators',
   '$pending',
   'informes'
 ];
