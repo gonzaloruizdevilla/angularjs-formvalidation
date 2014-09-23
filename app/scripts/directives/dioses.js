@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('validacionesApp')
-  .directive('dioses', function (listen, $parse, $q, $timeout) {
+  .directive('dioses', function () {
     return {
       restrict: 'A',
       require: '?ngModel',

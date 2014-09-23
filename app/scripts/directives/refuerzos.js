@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('validacionesApp')
-  .directive('refuerzos', function (listen, $parse, $q, $timeout) {
+  .directive('refuerzos', function ($q, $timeout) {
     var MAX_DELINCUENTES = 10;
     return {
       restrict: 'A',
